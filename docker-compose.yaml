@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+
+  api:
+    image: node:alpine
+    # container_name: api
+    build: .
+    working_dir: /usr/app
+    command: npm run docker_dev
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "${PORT}:${PORT}"
