@@ -16,13 +16,17 @@ jobs:
 
     #Generate tag based on commit
 
-    #Login on the container registry
+    - name: Login into the container registry
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     #V1 - Build image with "docker build" command (docker build -t image-name:tag .):
     # - name: Build image
     #   run: docker build -t alessandro1918/nlw-journey:latest .
 
-    #V2 - Build image with Github Actions Workflow:
+    #V2 - Build image with Github Actions Workflow, push image to DockerHub Container Registry:
     #OBS: Pipping 2 tags like this will ensure that the "not-latest" image will remain in the Registry as a backup, when the "latest" gets overwriten on the next commit,
     - name: Build and push
       uses: docker/build-push-action@v6
