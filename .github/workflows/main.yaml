@@ -19,5 +19,16 @@ jobs:
     #Login on the container registry
 
     #V1 - Build image with "docker build" command (docker build -t image-name:tag .):
-    - name: Build image
-      run: docker build -t alessandro1918/nlw-journey:latest .
+    # - name: Build image
+    #   run: docker build -t alessandro1918/nlw-journey:latest .
+
+    #V2 - Build image with Github Actions Workflow:
+    #OBS: Pipping 2 tags like this will ensure that the "not-latest" image will remain in the Registry as a backup, when the "latest" gets overwriten on the next commit,
+    - name: Build and push
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        push: true
+        tags: |
+          alessandro1918/nlw-journey:abc1234
+          alessandro1918/nlw-journey:latest
