@@ -4,8 +4,8 @@ WORKDIR /usr/app
 
 COPY package*.json ./
 
-# TODO - figure it out why I had to add "npm i" here and on the package.json script
-RUN npm install   
+# TODO - figure it out why "RUN npm install" doesn't work here, and because of that I have to add "npm install" at the package.json script
+# RUN npm install
 
 COPY . .
 
