@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch --env-file .env src/server.ts",
-    "docker_dev": "npm install && tsx watch --env-file .env src/server.ts"
+    "dev_js": "node src/server.js",
+    "dev_ts": "tsx watch --env-file .env src/server.ts",
+    "compose_dev_js": "npm install && node src/server.js",
+    "compose_dev_ts": "npm install && tsx watch --env-file .env src/server.ts"
   },
   "author": "Ale B. C.",
   "license": "ISC",
