@@ -7,7 +7,7 @@ services:
     # container_name: api
     build: .
     working_dir: /usr/app
-    command: npm run docker_dev
+    command: npm run compose_dev_ts
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
