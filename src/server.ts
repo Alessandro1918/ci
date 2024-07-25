@@ -1,6 +1,7 @@
+import "dotenv/config"
 import express from "express"
 
-const PORT = parseInt(process.env.PORT!) || 4000
+const PORT = parseInt(process.env.PORT!) || 3000
 
 const app = express()
 
@@ -15,5 +16,5 @@ app.get("/", async (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
+  console.log(`Typescrypt server running on http://localhost:${PORT}`)
 })

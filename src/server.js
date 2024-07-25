@@ -1,6 +1,7 @@
+require('dotenv').config()  //without dotenv package, package.json script has to be: "dev": "tsx watch --env-file .env src/server.ts"
 const express = require("express")
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 3000
 
 const app = express()
 
