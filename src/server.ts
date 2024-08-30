@@ -11,7 +11,8 @@ app.get("/", async (req, res) => {
   res
     .status(200)  //OK
     .send({
-      "message": "Hello, Docker!!"
+      "message": "Hello, Docker!!",
+      "language": "TS"
     })
 })
 
