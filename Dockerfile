@@ -40,7 +40,7 @@ RUN npm install --only=production
 COPY --from=build /usr/app/dist ./
 COPY .env ./
 
-# tsconfig.json set my rootDir to "./", and
+# tsconfig.json set my rootDir to "./src", and
 # after build, my "server.ts" is compile to "server.js".
-# So, "npx tsx watch src/server.ts" => "node ./src/server.js"
-CMD ["node", "./src/server.js"]
+# So, "npx tsx watch src/server.ts" => "node ./server.js"
+CMD ["node", "./server.js"]
